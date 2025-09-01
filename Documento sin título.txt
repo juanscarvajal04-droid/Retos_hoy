@@ -1,0 +1,100 @@
+﻿Detección de enfermedades tempranas pseudocódigo 
+JUAN SEBASTIAN CARVAJAL
+
+
+
+
+
+
+INICIO
+    LEER float: hemoglobina
+    LEER int: genero
+
+
+    SI genero = 1 ENTONCES
+        SI hemoglobina < 12.2 ENTONCES
+            IMPRIMIR "Baja"
+        SINO
+
+
+            SI hemoglobina <= 16.6 ENTONCES
+                IMPRIMIR "Normal"
+            SINO
+                IMPRIMIR "Alta"
+            FIN SI
+        FIN SI
+    SINO
+
+
+        SI genero = 2 ENTONCES
+            SI hemoglobina < 12.6 ENTONCES
+                IMPRIMIR "Baja"
+            SINO
+
+
+                SI hemoglobina <= 15 ENTONCES
+                    IMPRIMIR "Normal"
+                SINO
+
+
+                    IMPRIMIR "Alta"
+                FIN SI
+
+
+            FIN SI
+
+
+        SINO
+
+
+            IMPRIMIR "No es posible generar la alerta"
+
+
+        FIN SI
+    FIN SI
+FIN
+
+
+
+
+
+
+
+
+
+
+
+
+ Análisis de prueba de escritorio
+Entrada (hemoglobina)
+	Entrada (genero)
+	Proceso
+	Salida
+	10
+	1
+	Genero=1 → hemoglobina=10 < 12.2 → Baja
+	Baja
+	17
+	2
+	Genero=2 → hemoglobina=17 > 15 → Alta
+	Alta
+	14
+	2
+	Genero=2 → hemoglobina=14 está entre 12.6 y 15 → Normal
+	Normal
+	16
+	0
+	Genero=0 → no es 1 ni 2 → No es posible generar la alerta
+	No es posible generar la alerta
+	12.5
+	1
+	Genero=1 → hemoglobina=12.5 entre 12.2 y 16.6 → Normal
+	Normal
+	18
+	1
+	Genero=1 → hemoglobina=18 > 16.6 → Alta
+	Alta
+	12
+	2
+	Genero=2 → hemoglobina=12 < 12.6 → Baja
+	Baja
