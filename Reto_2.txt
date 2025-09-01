@@ -1,0 +1,98 @@
+﻿Detección de enfermedades tempranas pseudocódigo 
+JUAN SEBASTIAN CARVAJAL
+
+
+
+
+Inicio
+    Leer N   número de pacientes
+
+
+    hombres_baja = 0
+    hombres_normal = 0
+    hombres_alta = 0
+    mujeres_baja = 0
+    mujeres_normal = 0
+    mujeres_alta = 0
+
+
+    Para i desde 1 hasta N hacer
+        Leer hemoglobina
+        Leer genero
+
+
+        Mientras genero != 1 Y genero != 2 hacer
+            Leer genero
+
+
+        Si genero == 1 Entonces   // Masculino
+            Si hemoglobina < 12.2 Entonces
+                hombres_baja = hombres_baja + 1
+            Sino Si hemoglobina <= 16.6 Entonces
+                hombres_normal = hombres_normal + 1
+            Sino
+                hombres_alta = hombres_alta + 1
+        Sino                      // Femenino
+            Si hemoglobina < 12.6 Entonces
+                mujeres_baja = mujeres_baja + 1
+            Sino Si hemoglobina <= 15 Entonces
+                mujeres_normal = mujeres_normal + 1
+            Sino
+                mujeres_alta = mujeres_alta + 1
+        FinSi
+    FinPara
+
+
+    Escribir hombres_baja, hombres_normal, hombres_alta, mujeres_baja, mujeres_normal, mujeres_alta
+Fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Prueba de escritorio
+Paciente
+	Hemoglobina
+	Género
+	Condición evaluada
+	Resultado
+	Contadores afectados
+	1
+	10
+	1 (H)
+	10 < 12.2
+	Hombre Baja
+	hombres_baja = 1
+	2
+	17
+	2 (M)
+	17 > 15
+	Mujer Alta
+	mujeres_alta = 1
+	3
+	14
+	2 (M)
+	12.6 ≤ 14 ≤ 15
+	Mujer Normal
+	mujeres_normal = 1
+	4
+	16
+	1 (H)
+	12.2 ≤ 16 ≤ 16.6
+	Hombre Normal
+	hombres_normal = 1
+	5
+	14
+	1 (H)
+	12.2 ≤ 14 ≤ 16.6
+	Hombre Normal
+	hombres_normal = 2
